@@ -69,7 +69,7 @@ section > div {
   flex-shrink: 0;
   /* Add a bigger shadow for depth */
   box-shadow: 0 4px 24px rgba(0, 113, 197, 0.15); /* Stronger shadow */
-  transition: box-shadow 1.5s, border-color 2s;
+  transition: 3s;
   /* Make sure content fits nicely */
   box-sizing: border-box;
   position: relative; /* Needed for overlay positioning */
@@ -117,7 +117,7 @@ section > div img {
   text-align: center;
   opacity: 0; /* Start hidden */
   pointer-events: none; /* Prevent interaction when hidden */
-  transition: opacity 5s; /* Smooth fade in/out */
+  transition: 5s; /* Smooth fade in/out */
 }
 
 section > div:hover p {
