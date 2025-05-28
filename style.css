@@ -1,1 +1,121 @@
-/* Add your CSS here */
+/* Intel color palette variables for easy changes */
+:root {
+  --intel-blue: #0071c5; /* Main Intel blue */
+  --intel-light-blue: #e6f2fa; /* Light blue background */
+  --intel-dark-blue: #004578; /* Darker blue for accents */
+  --intel-gray: #e5e5e5; /* Light gray */
+  --intel-white: #ffffff;
+}
+
+body {
+  /* Set a light blue background for the whole page */
+  background: var(--intel-light-blue);
+  color: var(--intel-dark-blue);
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: var(--intel-blue);
+  color: var(--intel-white);
+  padding: 24px 0;
+  text-align: center;
+}
+
+header img {
+  max-width: 120px;
+  margin-bottom: 12px;
+}
+
+header h1 {
+  margin: 0 0 8px 0;
+}
+
+header p {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+/* Timeline section styles */
+section {
+  /* Use flexbox to arrange cards in a row */
+  display: flex; /* Arrange children in a row */
+  flex-direction: row; /* Make sure it's horizontal */
+  overflow-x: auto; /* Show horizontal scrollbar if needed */
+  padding: 10px 0; /* Add some space above and below */
+  /* Optional: smooth scrolling */
+  scroll-behavior: smooth;
+}
+
+/* Style each card inside the section */
+section > div {
+  /* Set a fixed width for each card */
+  width: 250px;
+  /* Add space between cards */
+  margin-right: 16px;
+  /* Add a border and background color */
+  border: 2px solid var(--intel-blue); /* Intel blue border */
+  border-radius: 8px;
+  background: var(--intel-white); /* White card background */
+  /* Add some padding inside the card */
+  padding: 12px;
+  /* Make sure the card doesn't shrink */
+  flex-shrink: 0;
+  /* Add a little shadow for depth */
+  box-shadow: 0 2px 6px rgba(0,113,197,0.08);
+  /* Make sure content fits nicely */
+  box-sizing: border-box;
+  position: relative;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+section > div h2 {
+  color: var(--intel-blue);
+  margin-top: 0;
+}
+
+section > div h3 {
+  color: var(--intel-dark-blue);
+  margin-bottom: 8px;
+}
+
+/* Make images fit the card width */
+section > div img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  border: 1px solid var(--intel-gray);
+}
+
+/* Hide the <p> tag inside each card by default */
+section > div p {
+  display: none; /* Hide by default */
+  color: var(--intel-dark-blue);
+  background: var(--intel-light-blue);
+  border-radius: 4px;
+  padding: 8px;
+  margin: 0;
+  font-size: 0.98em;
+}
+
+/* Show the <p> tag when hovering over the card */
+section > div:hover p {
+  display: block;
+}
+
+/* Add a simple hover effect to cards */
+section > div:hover {
+  border-color: var(--intel-dark-blue);
+  box-shadow: 0 4px 16px rgba(0,113,197,0.18);
+}
+
+/* Optional: Style the horizontal scrollbar */
+section::-webkit-scrollbar {
+  height: 10px;
+}
+section::-webkit-scrollbar-thumb {
+  background: var(--intel-blue);
+  border-radius: 5px;
+}
+
+/* End of timeline styles */
