@@ -28,6 +28,9 @@ header img {
 
 header h1 {
   margin: 0 0 8px 0;
+  font-size: 2.5em;
+  font-weight: bold;
+  font-family: 'Segoe UI', Arial, sans-serif; /* Professional font for h1 */
 }
 
 header p {
@@ -44,28 +47,34 @@ section {
   padding: 10px 0; /* Add some space above and below */
   /* Optional: smooth scrolling */
   scroll-behavior: smooth;
+  /* Enable scroll snapping to cards */
+  scroll-snap-type: x mandatory;
 }
 
 /* Style each card inside the section */
 section > div {
-  /* Set a fixed width for each card */
-  width: 250px;
+  /* Set card height to 25% of the viewport height */
+  height: 25vh;
+  /* Set a larger width for each card */
+  width: 400px;
   /* Add space between cards */
-  margin-right: 16px;
+  margin-right: 24px;
   /* Add a border and background color */
   border: 2px solid var(--intel-blue); /* Intel blue border */
   border-radius: 8px;
   background: var(--intel-white); /* White card background */
   /* Add some padding inside the card */
-  padding: 12px;
+  padding: 24px;
   /* Make sure the card doesn't shrink */
   flex-shrink: 0;
-  /* Add a little shadow for depth */
-  box-shadow: 0 2px 6px rgba(0,113,197,0.08);
+  /* Add a bigger shadow for depth */
+  box-shadow: 0 4px 24px rgba(0, 113, 197, 0.15); /* Stronger shadow */
+  transition: box-shadow 1.5s, border-color 2s;
   /* Make sure content fits nicely */
   box-sizing: border-box;
   position: relative; /* Needed for overlay positioning */
-  transition: box-shadow 0.2s, border-color 0.2s;
+  /* Snap alignment for scrolling */
+  scroll-snap-align: start;
 }
 
 section > div h2 {
@@ -103,20 +112,24 @@ section > div img {
   box-sizing: border-box;
   z-index: 2; /* Make sure overlay is above other content */
   /* Center text vertically and horizontally */
-  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  opacity: 0; /* Start hidden */
+  pointer-events: none; /* Prevent interaction when hidden */
+  transition: opacity 5s; /* Smooth fade in/out */
 }
 
 section > div:hover p {
   display: flex; /* Show overlay on hover */
+  opacity: 1; /* Fade in on hover */
+  pointer-events: auto;
 }
 
 /* Add a simple hover effect to cards */
 section > div:hover {
   border-color: var(--intel-dark-blue);
-  box-shadow: 0 4px 16px rgba(0,113,197,0.18);
+  box-shadow: 0 8px 32px rgba(0,113,197,0.25); /* Stronger shadow on hover */
 }
 
 /* Optional: Style the horizontal scrollbar */
