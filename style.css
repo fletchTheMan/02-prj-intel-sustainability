@@ -94,7 +94,7 @@ section > div img {
   margin-bottom: 8px;
   border: 1px solid var(--intel-gray);
   display: block; /* Prevents image from overflowing due to inline spacing */
-  max-width: 100%; /* Ensures image never exceeds card width */
+  max-width: 250px; /* Ensures image never exceeds card width */
   max-height: 100%; /* Ensures image never exceeds card height */
   object-fit: contain; /* Keeps the whole image visible inside the card */
 }
